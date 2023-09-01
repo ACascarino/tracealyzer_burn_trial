@@ -1,0 +1,31 @@
+{
+    "version": 7,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 27,
+        "patch": 2
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Default Config",
+            "description": "Default build",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/app_traceburn",
+            "installDir": "${sourceDir}/build/release_app_traceburn",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/xmos_cmake_toolchain/xs3a.cmake",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default",
+            "targets": [
+                "app_traceburn"
+            ]
+        }
+    ]
+}

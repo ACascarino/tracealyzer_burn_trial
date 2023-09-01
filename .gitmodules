@@ -1,0 +1,15 @@
+[submodule "modules/io"]
+	path = modules/io
+	url = git@github.com:xmos/fwk_io.git
+[submodule "modules/rtos"]
+	path = modules/rtos
+	url = git@github.com:xmos/fwk_rtos.git
+[submodule "xmos_cmake_toolchain"]
+	path = xmos_cmake_toolchain
+	url = git@github.com:xmos/xmos_cmake_toolchain.git
+[submodule "modules/core"]
+	path = modules/core
+	url = git@github.com:xmos/fwk_core.git
+[submodule "modules/qspi_fast_read"]
+	path = modules/qspi_fast_read
+	url = git@github.com:xmos/lib_qspi_fast_read.git
