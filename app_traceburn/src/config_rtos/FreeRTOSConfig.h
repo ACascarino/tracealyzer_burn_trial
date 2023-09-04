@@ -11,13 +11,13 @@ your application. */
 #define configCPU_CLOCK_HZ                      100000000
 
 #if ON_TILE(0)
-#define configNUM_CORES                         5
+#define configNUM_CORES                         8
 #endif
 #if ON_TILE(1)
 #define configNUM_CORES                         5
 #endif
 
-#define configTICK_RATE_HZ                      1000
+#define configTICK_RATE_HZ                      10000
 #define configMAX_PRIORITIES                    32
 #define configRUN_MULTIPLE_PRIORITIES           1
 #define configUSE_TASK_PREEMPTION_DISABLE       1

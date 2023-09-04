@@ -1,6 +1,6 @@
 #define DEBUG_UNIT MAIN_TILE1
 #ifndef DEBUG_PRINT_ENABLE_MAIN_TILE1
-    #define DEBUG_PRINT_ENABLE_MAIN_TILE1 1
+#define DEBUG_PRINT_ENABLE_MAIN_TILE1 1
 #endif
 #include "debug_print.h"
 #include "rtos_printf.h"
@@ -16,7 +16,7 @@
 
 #if ON_TILE(1)
 
-static void rtos_app(void* args)
+static void rtos_app(void *args)
 {
     debug_printf("RTOS starting on tile[%d]\n", THIS_XCORE_TILE);
     // platform_start();
