@@ -66,11 +66,11 @@ class Core:
         """Populates self.utilisation with % non-idle per window"""
         # This really isn't very efficient but it doesn't need to be
         for idx, window in enumerate(windows):
-            overlapping_microseconds = 0
+            overlapping_us = 0
             # Get applicable wake ranges
             for awake in self.wake_ranges:
-                overlapping_microseconds += len(OVERLAP(awake, window))
-            self.utilisation |= {idx: overlapping_microseconds / len(window)}
+                overlapping_us += len(OVERLAP(awake, window))
+            self.utilisation |= {idx: 100 * overlapping_us / len(window)}
 
     def calculate_sliding_stdev_utilisation(self, hop):
         """Populates self.stdev_utilisation_sliding with coarse stddev info"""
