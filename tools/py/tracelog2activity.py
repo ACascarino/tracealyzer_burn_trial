@@ -185,7 +185,6 @@ def output_report(output: pathlib.Path, cpus: dict[int, Core]) -> None:
             writer.writerow(op_dict)
 
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
