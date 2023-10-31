@@ -2,21 +2,8 @@ set(TRACE_OUTPUT_FILE freertos_trace)
 
 file(GLOB_RECURSE APP_SOURCES src/*.c)
 
-set(APP_INCLUDES
-    src
-    src/tile_common
-)
-
-set(APP_CONF_INCLUDES
-    src/config_app
-)
-
 set(RTOS_CONF_INCLUDES
     src/config_rtos
-)
-
-set(TRACE_CONF_INCLUDES
-    src/config_trace
 )
 
 set(APP_COMPILER_FLAGS
@@ -42,10 +29,7 @@ set(APP_LINK_OPTIONS
 )
 
 set(APP_COMMON_LINK_LIBRARIES
-    bsp::xk_voice_l71
     rtos::freertos
-    rtos::drivers::trace
-    core::general
 )
 
 # ************
@@ -57,7 +41,7 @@ foreach(TILE ${TILES})
     set(TARGET_NAME tile${TILE}_${PROJECT_NAME})
     add_executable(${TARGET_NAME} EXCLUDE_FROM_ALL)
     target_sources(${TARGET_NAME} PUBLIC ${APP_SOURCES})
-    target_include_directories(${TARGET_NAME} PUBLIC ${APP_INCLUDES} ${RTOS_CONF_INCLUDES} ${TRACE_CONF_INCLUDES} ${APP_CONF_INCLUDES})
+    target_include_directories(${TARGET_NAME} PUBLIC ${RTOS_CONF_INCLUDES})
     target_compile_options(${TARGET_NAME} PRIVATE ${APP_COMPILER_FLAGS})
     target_compile_definitions(${TARGET_NAME} PUBLIC ${APP_COMPILE_DEFINITIONS} THIS_XCORE_TILE=${TILE})
     target_link_options(${TARGET_NAME} PRIVATE ${APP_LINK_OPTIONS})
